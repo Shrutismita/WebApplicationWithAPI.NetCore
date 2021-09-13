@@ -28,7 +28,10 @@ namespace WebApplicationForDanskeBank.Controllers
             {
                 string[] splited = sortingNumberViewModel.Numbers.Split(" ");
                 int[] numberArr = splited.Select(int.Parse).ToArray();
-                List<int> sorted = new List<int>();
+                //List<int> sorted = new List<int>();
+                var watch = System.Diagnostics.Stopwatch.StartNew();
+                if (!watch.IsRunning)
+                    watch.Start();
                 if (sortingNumberViewModel.SortingType == "quicksort")
                 {
                     QuickSort(numberArr, 0, numberArr.Length - 1);
@@ -41,7 +44,7 @@ namespace WebApplicationForDanskeBank.Controllers
                 {
                     BubbleSort(numberArr);
                 }
-                storeArray(numberArr);
+                storeArray(numberArr,watch);
             }
             return View(sortingNumberViewModel);
             //return RedirectToAction("CreateSortingNumber", "SortingNumber");
@@ -147,16 +150,18 @@ namespace WebApplicationForDanskeBank.Controllers
                         arr[j + 1] = temp;
                     }
         }
-        static void storeArray(int[] arr)
+        static void storeArray(int[] arr, System.Diagnostics.Stopwatch watch)
         {
             //int n = arr.Length;
             
-                using (StreamWriter writer = new StreamWriter("C:\\WebApplicationForDanskeBank\\Result.txt"))
+                using (StreamWriter writer = new StreamWriter("C:\\WebApplicationWithAPI.NetCore\\Result.txt"))
                 {
                     Console.SetOut(writer);
                    //Console.WriteLine("hi");
                     for (int i = 0; i < arr.Length; ++i)
                     Console.WriteLine(arr[i] + " ");
+                    watch.Stop();
+                   Console.WriteLine($"Total Execution Time: {watch.ElapsedMilliseconds} ms");
                 }
 
            

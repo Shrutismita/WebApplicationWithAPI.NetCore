@@ -12542,11 +12542,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\WebApplicationForDanskeBank\\WebApplicationForDanskeBank\\WebApplicationForDanskeBank.csproj",
+      "projectUniqueName": "C:\\WebApplicationWithAPI.NetCore\\WebApplicationForDanskeBank\\WebApplicationForDanskeBank.csproj",
       "projectName": "WebApplicationForDanskeBank",
-      "projectPath": "C:\\WebApplicationForDanskeBank\\WebApplicationForDanskeBank\\WebApplicationForDanskeBank.csproj",
+      "projectPath": "C:\\WebApplicationWithAPI.NetCore\\WebApplicationForDanskeBank\\WebApplicationForDanskeBank.csproj",
       "packagesPath": "C:\\Users\\EI11184\\.nuget\\packages\\",
-      "outputPath": "C:\\WebApplicationForDanskeBank\\WebApplicationForDanskeBank\\obj\\",
+      "outputPath": "C:\\WebApplicationWithAPI.NetCore\\WebApplicationForDanskeBank\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

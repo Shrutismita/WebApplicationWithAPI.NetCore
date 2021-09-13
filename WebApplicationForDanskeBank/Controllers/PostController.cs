@@ -49,7 +49,7 @@ namespace WebApplicationForDanskeBank.Controllers
         public string Get()
         {
             
-            StreamReader sr = new StreamReader("C:\\WebApplicationForDanskeBank\\Result.txt");
+            StreamReader sr = new StreamReader("C:\\WebApplicationWithAPI.NetCore\\Result.txt");
             string lines = sr.ReadToEnd();
             return lines;
         }
