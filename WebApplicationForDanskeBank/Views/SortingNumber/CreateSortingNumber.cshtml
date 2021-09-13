@@ -1,0 +1,55 @@
+﻿@model WebApplicationForDanskeBank.ViewModels.SortingNumberViewModel
+@{
+    ViewData["Title"] = "SortingNumber";
+   
+}
+<div class="panel">
+    
+    <div class="panel-content">
+        <div class="page-heading-blk cust-panel-heading clearfix">
+            <div class="col-xs-12 col-sm-6 col-md-8 mb_center_cha">
+                <h3>Sorting Numbers</h3>
+            </div>
+
+        </div>
+        @using (Html.BeginForm("CreateSortingNumber", "SortingNumber", FormMethod.Post, new { @id = "SortingNumberCreateform", enctype = "multipart/form-data" }))
+        {
+            @Html.ValidationSummary(true)
+            @Html.AntiForgeryToken()
+            <div class="form-group cust-form">
+                <div class="row">
+                    <div class="col-md-3">
+                        @*@Html.LabelFor(model => model.Name)*@
+                        @Html.Label("Number")
+                        <span class="mandatory-txt">*</span>
+                        <p>Enter the numbers </p>
+                    </div>
+                    <div class="col-md-9">
+                        @Html.TextBoxFor(model => model.Numbers, new { @class = "form-control",autocomplete = "off", @required = "required", @title = "Number is required." })
+                        @Html.ValidationMessageFor(model => model.Numbers)
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="form-group cust-form">
+                <div class="row">
+                    <div class="col-md-3">
+                        @Html.Label("Sorting Type")
+                        <span class="mandatory-txt">*</span>
+                        <p>Select the sorting type</p>
+                    </div>
+                    <div class="col-md-9">
+                        <select asp-for="SortingType" asp-items="Model.SortingTypes"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="submit-holder clearfix">
+                <div class="pull-right">
+                   <input type="submit" class="btn-mvc-blue" value="Submit" />
+                </div>
+            </div>
+
+        }
+    </div>
+</div>
